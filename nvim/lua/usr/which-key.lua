@@ -20,7 +20,7 @@ wk.register({
       x = { "<Plug>(coc-codeaction-selected)", "Applying codeAction to the selected region" },
     },
     d = { "<cmd>Telescope coc workspace_diagnostics<cr>", "show coc diagnostics" },
-    e = { "<cmd>Telescope bookmarks<cr>", "searcher browser bookmarks" },
+--    e = { "<cmd>Telescope bookmarks<cr>", "searcher browser bookmarks" },
     f = { "<cmd>Telescope find_files<cr>", "search files (include submodules)" },
     F = { "<cmd>Telescope git_files<cr>", "search files (exclude submodules)" },
     g = { "<cmd>Telescope live_grep<cr>", "live grep" },
@@ -28,7 +28,7 @@ wk.register({
     h = { "<cmd>Telescope help_tags<cr>", "search vim manual" },
     j = { "<cmd>Telescope emoji<cr>", "search emoji" },
     k = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
-    m = { "<cmd>Telescope vim_bookmarks all<cr>", "search bookmarks in project" },
+--    m = { "<cmd>Telescope vim_bookmarks all<cr>", "search bookmarks in project" },
     o = { "<cmd>call Outline()<cr>", "search symbols in file" },
     -- leader p used for paste from system clipboard
     s = { "<cmd>Telescope coc workspace_symbols<cr>", "search symbols in project" },
@@ -131,12 +131,12 @@ wk.register({
     K = { "<C-w>k", "go to the window up" },
     L = { "<C-w>l", "go to the window right" },
   },
-  m = {
-    name = "+bookmarks",
-    a = { "<cmd>Telescope vim_bookmarks all<cr>", "list marks in project" },
-    m = { "<cmd>BookmarkToggle<cr>", "toggle bookmark" },
-    x = { "<cmd>BookmarkClearAll<cr>", "remove all bookmarks in project" },
-  },
+--  m = {
+--    name = "+bookmarks",
+--    a = { "<cmd>Telescope vim_bookmarks all<cr>", "list marks in project" },
+--    m = { "<cmd>BookmarkToggle<cr>", "toggle bookmark" },
+--    x = { "<cmd>BookmarkClearAll<cr>", "remove all bookmarks in project" },
+--  },
   ["<tab>"] = { "<cmd>wincmd w<cr>", "switch window" },
 })
 

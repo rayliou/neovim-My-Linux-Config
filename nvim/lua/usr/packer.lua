@@ -21,7 +21,7 @@ require("packer").startup({
     use { 'neoclide/coc.nvim', branch = 'release' } -- lsp
     use 'kyazdani42/nvim-web-devicons' -- 显示图标
     use 'folke/which-key.nvim' -- 用于配置和提示快捷键
-    use 'tami5/sqlite.lua' -- 数据库
+ --   use 'tami5/sqlite.lua' -- 数据库
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- 基于语法树的高亮
     use 'RRethy/nvim-treesitter-textsubjects'
@@ -37,19 +37,19 @@ require("packer").startup({
     use 'kazhala/close-buffers.nvim' -- 一键删除不可见 buffer
     use 'gelguy/wilder.nvim' -- 更加智能的命令窗口
     use 'romgrk/fzy-lua-native' -- wilder.nvim 的依赖
-    use 'xiyaowong/nvim-transparent' -- 可以移除掉背景色，让 vim 透明
+--    use 'xiyaowong/nvim-transparent' -- 可以移除掉背景色，让 vim 透明
     -- 颜色主题
     use 'folke/tokyonight.nvim'
-    -- git 管理
-    use 'tpope/vim-fugitive' -- 显示 git blame，实现一些基本操作的快捷执行
-    use 'rhysd/git-messenger.vim' -- 利用 git blame 显示当前行的 commit message
-    use 'lewis6991/gitsigns.nvim' -- 显示改动的信息
+--    -- git 管理
+--    use 'tpope/vim-fugitive' -- 显示 git blame，实现一些基本操作的快捷执行
+--    use 'rhysd/git-messenger.vim' -- 利用 git blame 显示当前行的 commit message
+--    use 'lewis6991/gitsigns.nvim' -- 显示改动的信息
     -- 基于 telescope 的搜索
     use 'nvim-telescope/telescope.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim',
       run = 'make' } -- telescope 搜索的插件，可以提升搜索效率
     use 'fannheyward/telescope-coc.nvim' -- 搜索 coc 提供的符号
-    use 'dhruvmanila/telescope-bookmarks.nvim' -- 搜索 bookmarks
+--    use 'dhruvmanila/telescope-bookmarks.nvim' -- 搜索 bookmarks
     -- 命令执行
     use 'voldikss/vim-floaterm' -- 以悬浮窗口的形式打开终端
     use 'CRAG666/code_runner.nvim' -- 一键运行代码
@@ -74,16 +74,16 @@ require("packer").startup({
     use 'windwp/nvim-spectre' -- 媲美 vscode 的多文件替换
     -- 快速移动
     use 'ggandor/lightspeed.nvim'
-    -- 书签
-    use 'MattesGroeger/vim-bookmarks'
-    use 'tom-anders/telescope-vim-bookmarks.nvim' -- 辅助书签的搜索
+--    -- 书签
+--    use 'MattesGroeger/vim-bookmarks'
+--    use 'tom-anders/telescope-vim-bookmarks.nvim' -- 辅助书签的搜索
     -- 高亮
     use 'norcalli/nvim-colorizer.lua' -- 显示 #FFFFFF
     use 'andymass/vim-matchup' -- 高亮匹配的元素，例如 #if 和 #endif
     -- 时间管理
     use 'nvim-orgmode/orgmode' -- orgmode 日程管理
-    -- latex
-    use 'lervag/vimtex'
+--    -- latex
+--    use 'lervag/vimtex'
     -- 其他
     use 'CoatiSoftware/vim-sourcetrail' -- sourcetrail 插件
     use 'tyru/open-browser.vim' -- 使用 gx 打开链接

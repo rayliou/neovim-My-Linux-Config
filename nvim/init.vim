@@ -1,6 +1,25 @@
+"检测文件类型
+filetype on
 syntax enable
-" 鼠标可以移动，调整窗口等
-set mouse=a
+"设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
+"好处：误删什么的，如果以前屏幕打开，可以找回
+set t_ti= t_te=
+" No annoying sound on errors
+" 去掉输入错误的提示声音
+set title                " change the terminal's title
+set novisualbell           " don't beep
+set noerrorbells         " don't beep
+set t_vb=
+set tm=500
+"括号配对情况
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+
+
+"  " 鼠标可以移动，调整窗口等
+"  set mouse=a
 " 超过 window 宽度的行不要折叠
 set nowrap
 " 自动进入到新打开的窗口
@@ -11,6 +30,8 @@ set number
 " 高亮光标所在行
 set cursorline
 set termguicolors
+
+
 " 因为失去焦点就会自动保存，所以没有必要使用 swapfile
 set noswapfile
 " 自动隐藏 command-line
@@ -43,10 +64,10 @@ map <leader>d "+d
 autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | execute 'OSCYankReg +' | endif
 autocmd TextYankPost * if v:event.operator is 'd' && v:event.regname is '+' | execute 'OSCYankReg +' | endif
 
-" 使用 z a 打开和关闭 fold
-set foldlevelstart=99
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+"""" 使用 z a 打开和关闭 fold
+"""set foldlevelstart=99
+"""set foldmethod=expr
+"""set foldexpr=nvim_treesitter#foldexpr()
 
 " 加载 lua 配置
 lua require 'usr.bufferline'
@@ -61,7 +82,7 @@ lua require 'usr.version'
 lua require 'usr.which-key'
 lua require("colorizer").setup{'css'; 'javascript'; 'vim'; html = { mode = 'foreground';}}
 lua require("nvim-surround").setup{}
-lua require('gitsigns').setup{}
+"lua require('gitsigns').setup{}
 lua require('nvim-autopairs').setup{}
 lua require('spellsitter').setup{}
 
@@ -79,9 +100,41 @@ for s:fname in s:core_conf_files
   execute printf('source %s/vim/%s', stdpath('config'), s:fname)
 endfor
 
-colorscheme tokyonight
+colorscheme desert
+colorscheme tokyonight-storm
 " keymapping by whichkey doesn't work in neovim 0.8
 noremap <Space>bc :BDelete hidden<cr>
 
 " 因为 nvim-treesitter-textobjects 使用 x 来跳转，原始的 x 被映射为 xx
 nn xx x
+
+"Smart indent
+"set smartindent
+set autoindent    " always set autoindenting on
+" never add copyindent, case error   " copy the previous indentation on autoindenting
+
+set tabstop=4                " 设置Tab键的宽度        [等同的空格个数]
+set shiftwidth=4  " number of spaces to use for autoindenting
+set softtabstop=4             " 按退格键时可以一次删掉 4 个空格
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
+
+set expandtab                " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+
+set showcmd
+" A buffer becomes hidden when it is abandoned
+set hidden
+set wildmode=list:longest
+set ttyfast
+"Use arrow key to change buffer"
+noremap <left> :bp<CR>
+noremap <right> :bn<CR>
+nnoremap <F4> :set wrap! wrap?<CR>
+
+hi cursorline cterm=NONE ctermbg=darkred ctermfg=white
+hi cursorline guibg=darkred guifg=white
+highlight Pmenu guibg=darkgrey guifg=black
+highlight PmenuSel guibg=lightgrey guifg=black
+highlight Visual guibg=Yellow guifg=black
+hi Visual cterm=NONE ctermbg=Yellow ctermfg=black
